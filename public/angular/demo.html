@@ -1,31 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
-    <title>Closure demo</title>
+    <title>Protractor demo</title>
   </head>
   <body>
-    <h2>Data handling happens below</h2>
-    <button id="btn">Clicky</button>
-    <h3 id="insertion"></h3>
-    
-    <script type="text/javascript">
-      function fetchContent() {
-        var req = new XMLHttpRequest();
-        req.onreadystatechange = function () {
-          if (req.readyState === 4) {
-            if (req.status === 200) {
-              // Do something, the request is ready
-              document.getElementById('insertion').innerHTML = req.responseText;
-            } else {
-              alert("Request failure");
-            }
-          }
-        };
-        req.open('GET', '/rest/foobar', true);
-        req.send(null);
-      }
-      
-      document.getElementById('btn').onclick = fetchContent;
-    </script>
+    Write some text in textbox:
+    <input id="input" type="text" ng-model="sometext" />
+
+    <h1 id="heading1">Hello {{ sometext }}</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   </body>  
 </html>

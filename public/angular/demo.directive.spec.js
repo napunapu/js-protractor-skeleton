@@ -1,19 +1,14 @@
 var should = require('should');
 
-describe('reader chapter', function() {
+describe('demo file', function() {
 
-  it('should have target blank in links', function() {
-    browser.get(serverUrl + '/courses/johdatus-yhteiskuntatilastotieteeseen/teema');
-    browser.driver.wait(function() {
-      return browser.driver.isElementPresent(by.css('.reader-block a'));
-    });
-    // scroll down
-    browser.executeScript('$("#reader-chapter-container").scrollTop(500);').then(function() {
-      var link = $$('.reader-block a').first();
-      // check target
-      link.getAttribute('target').then(function(target) {
-        target.should.equal('_blank');
-      });
+  it('should echo text', function() {
+    browser.get(serverUrl + '/angular/demo.html');
+    // type text
+    $('#input').sendKeys('world');
+    // check target
+    $('#heading1').getText().then(function(text) {
+      text.should.equal('Hello world');
     });
   });
 

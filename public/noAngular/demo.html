@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Closure demo</title>
+    <title>Protractor demo</title>
   </head>
   <body>
     <h2>Data handling happens below</h2>
@@ -23,8 +23,6 @@
         };
         req.open('GET', '/rest/foobar', true);
         req.send(null);
-        
-        req = null;
       }
       
       document.getElementById('btn').onclick = fetchContent;

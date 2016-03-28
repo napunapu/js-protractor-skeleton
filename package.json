@@ -1,0 +1,20 @@
+{
+  "name": "js-protractor-skeleton",
+  "description": "A skeleton project for using protractor with Node.js",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "start": "node server.js",
+    "test": "make test"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+	"eslint": "^2.4.0",
+	"mocha": "^2.4.5",
+	"should": "^8.2.2"
+  },
+  "author": "Panu Korpela <panu.korpela@iki.fi> (http://panukorpela.com/)",
+  "license": "MIT"
+}

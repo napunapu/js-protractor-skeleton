@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Closure demo</title>
+  </head>
+  <body>
+    <h2>Data handling happens below</h2>
+    <button id="btn">Clicky</button>
+    <h3 id="insertion"></h3>
+    
+    <script type="text/javascript">
+      function fetchContent() {
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function () {
+          if (req.readyState === 4) {
+            if (req.status === 200) {
+              // Do something, the request is ready
+              document.getElementById('insertion').innerHTML = req.responseText;
+            } else {
+              alert("Request failure");
+            }
+          }
+        };
+        req.open('GET', '/rest/foobar', true);
+        req.send(null);
+      }
+      
+      document.getElementById('btn').onclick = fetchContent;
+    </script>
+  </body>  
+</html>

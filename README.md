@@ -17,6 +17,12 @@ Use webdriver-manager to manage [Selenium](http://seleniumhq.org/) installations
 webdriver-manager update
 ```
 
+Install the project dependencies from the `js-protractor-skeleton` folder:
+
+```bash
+npm install
+```
+
 ## Usage
 
 First command prompt:
